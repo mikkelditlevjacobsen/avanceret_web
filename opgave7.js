@@ -27,13 +27,21 @@ class spiller {
   }
 
   static FindSpiller(liste = [], search = ""){
-    
+    let result = [];
+    liste.forEach(spiller => {
+      if (spiller.Fornavn.toLowerCase().indexOf(search.toLowerCase()) > -1) {
+        result.push(spiller.Profil());
+      }
+    });
+    return result;
   }
 }
 
 let spillerliste = spiller.hentSpillerListe();
 
-spiller.FindSpiller(spillerliste, "AM");
+let search = spiller.FindSpiller(spillerliste, "onas");
+
+console.log(search);
 
 
 
