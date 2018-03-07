@@ -1,20 +1,25 @@
-let spiller_1 = {
-    fornavn: 'Jens',
-    efternavn: 'Hansen',
-    aktiv: false,
-    point: 0,
-    skiftAktiv: function () {
-        this.aktiv = !this.aktiv;
+let spiller = function (fornavn, efternavn) {
+    this.Fornavn = fornavn,
+    this.Efternavn = efternavn,
+    this.Aktiv = false,
+    this.Point = 0,
+    this.SkiftAktiv = function () {
+        this.Aktiv = !this.Aktiv;
     },
-    givPoint: function (antal) {
-        this.point += antal;
+    this.GivPoint = function (antal) {
+        this.Point += antal;
     },
-    profil: function () {
-        return `${this.fornavn} ${this.efternavn} har ${this.point} point ${this.aktiv ? "(aktiv)" : "(ikke aktiv)"}`
+    this.Profil = function () {
+        return `${this.Fornavn} ${this.Efternavn} har ${this.Point} point ${this.Aktiv ? "(aktiv)" : "(ikke aktiv)"}`
     }
 }
 
-spiller_1.skiftAktiv();
-spiller_1.givPoint(5);
+let spiller_1 = new spiller("Palle", "Olsen");
+let spiller_2 = new spiller("Tina", "Jensen");
 
-console.log(spiller_1.profil());
+spiller_1.SkiftAktiv();
+spiller_1.GivPoint(5);
+
+spiller_2.GivPoint(10);
+
+console.log(spiller_1.Profil());
