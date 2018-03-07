@@ -42,22 +42,3 @@ let spillerliste = spiller.hentSpillerListe();
 let search = spiller.FindSpiller(spillerliste, "onas");
 
 console.log(search);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// spillerliste.forEach(function (spiller) {
-//   spiller.GivPoint(10);
-//   console.log(spiller.Profil());
-// })
