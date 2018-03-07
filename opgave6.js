@@ -17,14 +17,17 @@ class spiller {
   Profil () {
     return `${this.Fornavn} ${this.Efternavn} har ${this.Point} point ${this.Aktiv ? "(aktiv)" : "(ikke aktiv)"}`;
   }
+
+  static hentSpillerListe(){
+    let liste = [];
+    liste.push(new spiller("Palle", "Olsen"));
+    liste.push(new spiller("Jonas", "Jensen"));
+    liste.push(new spiller("Jonas", "Jensen2"));
+    return liste;
+  }
 }
 
-let spillerliste = [];
-spillerliste.push(new spiller("Palle", "Olsen"))
-spillerliste.push(new spiller("Jonas", "Jensen"))
-
-// spillerliste[0].GivPoint(10);
-// spillerliste[1].GivPoint(5);
+let spillerliste = spiller.hentSpillerListe();
 
 spillerliste.forEach(function (spiller) {
   spiller.GivPoint(10);
